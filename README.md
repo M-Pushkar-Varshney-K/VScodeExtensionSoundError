@@ -1,71 +1,105 @@
-# error-sound-alert README
+# 🔊 Error Sound Alert
 
-This is the README for your extension "error-sound-alert". After writing up a brief description, we recommend including the following sections.
-
-## Features
-
-Describe specific features of your extension including screenshots of your extension in action. Image paths are relative to this README file.
-
-For example if there is an image subfolder under your extension project workspace:
-
-\!\[feature X\]\(images/feature-x.png\)
-
-> Tip: Many popular extensions utilize animations. This is an excellent way to show off your extension! We recommend short, focused animations that are easy to follow.
-
-## Requirements
-
-If you have any requirements or dependencies, add a section describing those and how to install and configure them.
-
-## Extension Settings
-
-Include if your extension adds any VS Code settings through the `contributes.configuration` extension point.
-
-For example:
-
-This extension contributes the following settings:
-
-* `myExtension.enable`: Enable/disable this extension.
-* `myExtension.thing`: Set to `blah` to do something.
-
-## Known Issues
-
-Calling out known issues can help limit users opening duplicate issues against your extension.
-
-## Release Notes
-
-Users appreciate release notes as you update your extension.
-
-### 1.0.0
-
-Initial release of ...
-
-### 1.0.1
-
-Fixed issue #.
-
-### 1.1.0
-
-Added features X, Y, and Z.
+**Error Sound Alert** is a lightweight Visual Studio Code extension that plays a sound whenever a terminal command fails (non-zero exit code). It helps you instantly notice errors without constantly watching the terminal.
 
 ---
 
-## Following extension guidelines
+## 🚀 Features
 
-Ensure that you've read through the extensions guidelines and follow the best practices for creating your extension.
+- 🔔 **Automatic Error Detection**
+  - Plays a sound when a terminal command exits with an error.
 
-* [Extension Guidelines](https://code.visualstudio.com/api/references/extension-guidelines)
+- 🎯 **Accurate Detection**
+  - Uses exit codes instead of unreliable keyword matching.
 
-## Working with Markdown
+- 🎵 **Custom Sound მხარდაჭერა**
+  - Easily change the alert sound to your preference.
 
-You can author your README using Visual Studio Code. Here are some useful editor keyboard shortcuts:
+---
 
-* Split the editor (`Cmd+\` on macOS or `Ctrl+\` on Windows and Linux).
-* Toggle preview (`Shift+Cmd+V` on macOS or `Shift+Ctrl+V` on Windows and Linux).
-* Press `Ctrl+Space` (Windows, Linux, macOS) to see a list of Markdown snippets.
+## ⚙️ How It Works
 
-## For more information
+- The extension listens to terminal command executions.
+- If a command exits with a **non-zero exit code**, a sound is played.
+- No false positives from `console.log` or `print` statements.
 
-* [Visual Studio Code's Markdown Support](http://code.visualstudio.com/docs/languages/markdown)
-* [Markdown Syntax Reference](https://help.github.com/articles/markdown-basics/)
+---
 
-**Enjoy!**
+## 🎧 Change Error Sound
+
+You can customize the alert sound:
+
+1. Open Command Palette:
+Ctrl + Shift + P
+
+2. Type:
+Change Error Sound
+
+3. Select a `.wav` file from your system
+
+⚠️ **Important:**
+- Only `.wav` files are supported
+- `.mp3` or other formats will not work
+
+---
+
+## 📦 Requirements
+
+- Visual Studio Code (version compatible with your extension)
+- OS with audio playback support:
+- Windows (PowerShell)
+- macOS (`afplay`)
+- Linux (`aplay`)
+
+---
+
+## ⚙️ Extension Settings
+
+Currently, this extension does not add configurable settings via `settings.json`.
+
+---
+
+## ⚠️ Known Limitations
+
+- If a program exits with code `0` despite having logical errors, no sound will be played
+- Some custom shells/tools may not report exit codes reliably
+- Only terminal-based errors are detected (not editor diagnostics)
+
+---
+
+## 📝 Release Notes
+
+### 1.0.2
+- Initial release
+- Error detection using terminal exit codes
+- Custom sound support via command palette
+
+---
+
+## 🤝 Contributing
+
+Contributions are welcome!
+
+GitHub Repository:  
+👉 https://github.com/M-Pushkar-Varshney-K/VScodeExtensionSoundError.git
+
+You can:
+- Report bugs
+- Suggest features
+- Submit pull requests
+
+---
+
+## 📄 License
+
+This project is licensed under the MIT License.
+
+## 💡 Future Improvements
+
+- Support for more audio formats
+- Volume control
+- Integration with VS Code diagnostics
+
+---
+
+**Enjoy coding with instant error feedback! 🚀**

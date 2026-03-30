@@ -28,8 +28,8 @@ export function activate(context: vscode.ExtensionContext) {
         const data = executionData.get(event.execution) || '';
         const exitCode = event.exitCode;
 
-        console.log("Exit code:", exitCode);
-        console.log("Command output:", data);
+        // console.log("Exit code:", exitCode);
+        // console.log("Command output:", data);
 
         let isError = false;
 
@@ -51,7 +51,7 @@ export function activate(context: vscode.ExtensionContext) {
                 'faahh.wav'
             );
 
-            console.log("Playing sound from:", soundPath);
+            // // console.log("Playing sound from:", soundPath);
             playSound(soundPath);
         }
 

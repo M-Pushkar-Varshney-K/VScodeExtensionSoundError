@@ -1,6 +1,6 @@
 {
-  "name": "error-sound-alert",
-  "displayName": "Error Sound Alert",
+  "name": "errorSound-alert",
+  "displayName": "ErrorSound Alert",
   "description": "Play a customizable sound when terminal commands fail (non-zero exit code) in Visual Studio Code.",
   "version": "1.0.2",
   "publisher": "MPVK",
